@@ -1,0 +1,790 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Little World ❤️</title>
+
+<style>
+:root {
+  --pink: #ff719a;
+  --light: #fff0f5;
+  --deep: #a72c60;
+  --text: #583747;
+  --white: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  background: linear-gradient(135deg, #fff4f7, #fce4ec, #fff8ef);
+  color: var(--text);
+}
+
+header {
+  text-align: center;
+  padding: 45px 16px 25px;
+}
+
+header h1 {
+  color: var(--deep);
+  font-size: clamp(2rem, 7vw, 3.5rem);
+  margin: 10px 0;
+}
+
+header p { font-size: 1.05rem; }
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  position: sticky;
+  top: 0;
+  background: #fff8f5ed;
+  backdrop-filter: blur(8px);
+  z-index: 5;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--deep);
+  padding: 10px 13px;
+  border-radius: 22px;
+  font-size: 0.9rem;
+}
+
+nav a:hover { background: #ffdce8; }
+
+main {
+  max-width: 900px;
+  margin: auto;
+  padding: 10px 16px 50px;
+}
+
+section {
+  background: #ffffffd9;
+  border: 1px solid #ffe0eb;
+  border-radius: 22px;
+  padding: 24px;
+  margin: 22px 0;
+  box-shadow: 0 8px 25px #d88ba315;
+}
+
+h2 {
+  color: var(--deep);
+  margin-top: 0;
+}
+
+.hero {
+  text-align: center;
+  padding: 35px 20px;
+  background: linear-gradient(135deg, #ffdce8, #fff3ed);
+}
+
+.big-heart {
+  font-size: 65px;
+  animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+}
+
+.counter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.counter div {
+  background: white;
+  padding: 15px;
+  border-radius: 15px;
+  min-width: 100px;
+  box-shadow: 0 3px 12px #c85b8220;
+}
+
+.counter strong {
+  display: block;
+  font-size: 1.8rem;
+  color: var(--pink);
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 12px;
+  margin: 7px 0 14px;
+  border: 1px solid #f3bfd0;
+  border-radius: 12px;
+  font: inherit;
+  background: #fffafd;
+  color: var(--text);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+button {
+  background: var(--pink);
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 22px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  margin: 4px 3px;
+}
+
+button:hover { background: var(--deep); }
+
+button.secondary {
+  background: #f5dbe5;
+  color: var(--deep);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.card {
+  background: #fff5f8;
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid #ffe0eb;
+  overflow-wrap: anywhere;
+}
+
+.card img {
+  width: 100%;
+  max-height: 280px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.date {
+  color: #bd6285;
+  font-size: 0.9rem;
+}
+
+footer {
+  text-align: center;
+  padding: 30px 15px;
+  color: #a45a78;
+}
+
+#toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #74324f;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 25px;
+  display: none;
+  z-index: 10;
+  max-width: 90%;
+}
+
+.letter-paper {
+  background: #fffaf0;
+  padding: 22px;
+  border-radius: 12px;
+  border: 1px dashed #e6b7c7;
+  white-space: pre-wrap;
+  line-height: 1.8;
+}
+
+.small { font-size: 0.88rem; color: #986c7e; }
+
+@media (max-width: 480px) {
+  section { padding: 18px; }
+  .counter div { min-width: 75px; padding: 12px 8px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="big-heart">❤️</div>
+  <h1>Our Little World</h1>
+  <p>Two hearts, two places, one beautiful story. 💌</p>
+</header>
+
+<nav>
+  <a href="#home">🏠 Home</a>
+  <a href="#dates">📅 Our Dates</a>
+  <a href="#memories">📸 Memories</a>
+  <a href="#letters">💌 Letters</a>
+  <a href="#puzzles">🧩 Puzzles</a>
+</nav>
+
+<main>
+
+<section class="hero" id="home">
+  <h2>Distance Means So Little ❤️</h2>
+  <p>When someone means so much.</p>
+
+  <div class="grid">
+    <div class="card">
+      <label for="person1">Your name</label>
+      <input id="person1" placeholder="Your name">
+    </div>
+    <div class="card">
+      <label for="person2">Their name</label>
+      <input id="person2" placeholder="Your favourite person">
+    </div>
+  </div>
+
+  <label for="startDate">The day our story began</label>
+  <input type="date" id="startDate">
+
+  <button onclick="saveSettings()">Save Our Story ❤️</button>
+
+  <div class="counter">
+    <div><strong id="days">0</strong>Days together</div>
+    <div><strong id="hours">0</strong>Hours apart</div>
+  </div>
+
+  <p id="coupleText">Every love story is special. This one is ours.</p>
+</section>
+
+<section id="dates">
+  <h2>📅 Our Special Dates</h2>
+  <p>Remember anniversaries, birthdays, first calls, and future meetups.</p>
+
+  <label for="eventTitle">What's the occasion?</label>
+  <input id="eventTitle" placeholder="Our first video call">
+
+  <label for="eventDate">Choose a date</label>
+  <input id="eventDate" type="date">
+
+  <label for="eventNote">A little note</label>
+  <textarea id="eventNote" placeholder="Why is this day special?"></textarea>
+
+  <button onclick="addEvent()">Add Special Date 💗</button>
+  <div id="eventList" class="grid"></div>
+</section>
+
+<section id="memories">
+  <h2>📸 Our Memory Lane</h2>
+  <p>Keep your favourite pictures and the stories behind them.</p>
+
+  <label for="photoFile">Choose a photo</label>
+  <input type="file" id="photoFile" accept="image/*">
+
+  <label for="photoCaption">Memory caption</label>
+  <input id="photoCaption" placeholder="The day you made me smile">
+
+  <label for="photoDate">Memory date</label>
+  <input id="photoDate" type="date">
+
+  <button onclick="addPhoto()">Save This Memory 📷</button>
+  <div id="photoList" class="grid"></div>
+</section>
+
+<section id="letters">
+  <h2>💌 Letters From The Heart</h2>
+  <p>Some feelings are easier to write than to say.</p>
+
+  <label for="letterTitle">Letter title</label>
+  <input id="letterTitle" placeholder="Open when you miss me">
+
+  <label for="letterTo">To</label>
+  <input id="letterTo" placeholder="My favourite person">
+
+  <label for="letterBody">Your letter</label>
+  <textarea id="letterBody" rows="7"
+    placeholder="My love, even though we're far apart..."></textarea>
+
+  <button onclick="addLetter()">Save Love Letter 💌</button>
+  <div id="letterList" class="grid"></div>
+</section>
+
+<section id="puzzles">
+  <h2>🧩 How Well Do You Know Us?</h2>
+  <p>Answer these little questions and see how well you know your love story!</p>
+
+  <div class="card">
+    <h3 id="question"></h3>
+    <div id="answers"></div>
+    <p id="quizFeedback" aria-live="polite"></p>
+    <button onclick="nextQuestion()" id="nextBtn" style="display:none">
+      Next Question 💕
+    </button>
+  </div>
+
+  <hr style="border:0;border-top:1px solid #f4d4e0;margin:24px 0">
+
+  <h3>🔐 Our Secret Word</h3>
+  <p>Choose a secret word only the two of you know.</p>
+  <input id="secretWord" placeholder="Enter your secret word">
+  <button onclick="saveSecret()">Set Secret Word</button>
+
+  <input id="secretGuess" placeholder="Guess our secret word">
+  <button onclick="checkSecret()">Unlock Our Message 🔑</button>
+  <p id="secretResult" aria-live="polite"></p>
+</section>
+
+<section>
+  <h2>🌙 A Little Reminder</h2>
+  <div class="letter-paper">
+    No matter how many miles separate us,
+    you are part of my every day.
+
+    We have memories to keep, dreams to chase,
+    letters to write, and a thousand moments
+    still waiting for us.
+
+    Until we meet again, let's keep choosing
+    each other. ❤️
+  </div>
+</section>
+
+</main>
+
+<footer>
+  Made with love, just for us ❤️
+  <p class="small">Our Little World · A collection of two hearts</p>
+</footer>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script>
+const $ = id => document.getElementById(id);
+
+const KEY = "ourLittleWorld_v1";
+
+const defaultData = {
+  person1: "",
+  person2: "",
+  startDate: "",
+  events: [],
+  photos: [],
+  letters: [],
+  secretWord: ""
+};
+
+let data;
+
+try {
+  data = {
+    ...defaultData,
+    ...JSON.parse(localStorage.getItem(KEY) || "{}")
+  };
+} catch {
+  data = { ...defaultData };
+}
+
+function persist() {
+  try {
+    localStorage.setItem(KEY, JSON.stringify(data));
+    return true;
+  } catch (error) {
+    notify("Storage is full. Try removing a large photo.");
+    return false;
+  }
+}
+
+function notify(message) {
+  const toast = $("toast");
+  toast.textContent = message;
+  toast.style.display = "block";
+  clearTimeout(notify.timer);
+  notify.timer = setTimeout(() => {
+    toast.style.display = "none";
+  }, 2600);
+}
+
+function safeText(value) {
+  return String(value ?? "").replace(/[&<>"']/g, char => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  })[char]);
+}
+
+function prettyDate(date) {
+  if (!date) return "Date not set";
+  const d = new Date(date + "T12:00:00");
+  return Number.isNaN(d.getTime())
+    ? "Date not set"
+    : d.toLocaleDateString(undefined, {
+        day: "numeric", month: "long", year: "numeric"
+      });
+}
+
+function saveSettings() {
+  data.person1 = $("person1").value.trim();
+  data.person2 = $("person2").value.trim();
+  data.startDate = $("startDate").value;
+
+  if (data.startDate &&
+      new Date(data.startDate + "T00:00:00") > new Date()) {
+    notify("Choose a date that is today or earlier.");
+    return;
+  }
+
+  if (persist()) {
+    renderHome();
+    notify("Your story has been saved! ❤️");
+  }
+}
+
+function renderHome() {
+  $("person1").value = data.person1;
+  $("person2").value = data.person2;
+  $("startDate").value = data.startDate;
+
+  const names = [data.person1, data.person2].filter(Boolean);
+  $("coupleText").textContent = names.length === 2
+    ? names[0] + " ❤️ " + names[1] + " — our own little universe."
+    : "Every love story is special. This one is ours.";
+
+  let days = 0;
+  if (data.startDate) {
+    const start = new Date(data.startDate + "T00:00:00");
+    const now = new Date();
+    const today = new Date(
+      now.getFullYear(), now.getMonth(), now.getDate()
+    );
+    days = Math.max(0, Math.floor((today - start) / 86400000));
+  }
+
+  $("days").textContent = days.toLocaleString();
+  $("hours").textContent = data.startDate
+    ? (days * 24).toLocaleString()
+    : "∞";
+}
+
+function addEvent() {
+  const title = $("eventTitle").value.trim();
+  const date = $("eventDate").value;
+  const note = $("eventNote").value.trim();
+
+  if (!title || !date) {
+    notify("Add an occasion and a date first.");
+    return;
+  }
+
+  data.events.push({
+    id: crypto.randomUUID(),
+    title, date, note
+  });
+
+  if (!persist()) {
+    data.events.pop();
+    return;
+  }
+
+  $("eventTitle").value = "";
+  $("eventDate").value = "";
+  $("eventNote").value = "";
+  renderEvents();
+  notify("Special date added! 💗");
+}
+
+function renderEvents() {
+  const list = $("eventList");
+  const sorted = [...data.events].sort((a, b) =>
+    a.date.localeCompare(b.date)
+  );
+
+  list.innerHTML = sorted.map(event => `
+    <article class="card">
+      <h3>${safeText(event.title)}</h3>
+      <p class="date">📅 ${prettyDate(event.date)}</p>
+      <p>${safeText(event.note)}</p>
+      <button class="secondary"
+        onclick="deleteItem('events','${event.id}')">Delete</button>
+    </article>
+  `).join("") || "<p>No special dates yet. Add your first one! 💕</p>";
+}
+
+function addPhoto() {
+  const file = $("photoFile").files[0];
+  const caption = $("photoCaption").value.trim();
+  const date = $("photoDate").value;
+
+  if (!file) {
+    notify("Choose a photo first.");
+    return;
+  }
+
+  if (!file.type.startsWith("image/")) {
+    notify("Please select an image.");
+    return;
+  }
+
+  if (file.size > 1.5 * 1024 * 1024) {
+    notify("Choose an image under 1.5 MB for this starter version.");
+    return;
+  }
+
+  const reader = new FileReader();
+
+  reader.onload = () => {
+    const memory = {
+      id: crypto.randomUUID(),
+      image: reader.result,
+      caption,
+      date
+    };
+
+    data.photos.push(memory);
+
+    if (!persist()) {
+      data.photos.pop();
+      return;
+    }
+
+    $("photoFile").value = "";
+    $("photoCaption").value = "";
+    $("photoDate").value = "";
+    renderPhotos();
+    notify("Memory saved! 📸");
+  };
+
+  reader.onerror = () => notify("Could not read this image.");
+  reader.readAsDataURL(file);
+}
+
+function renderPhotos() {
+  $("photoList").innerHTML = data.photos.map(photo => `
+    <article class="card">
+      <img src="${photo.image}" alt="${safeText(photo.caption || "A saved memory")}"
+        loading="lazy">
+      <h3>${safeText(photo.caption || "A beautiful memory ❤️")}</h3>
+      <p class="date">${prettyDate(photo.date)}</p>
+      <button class="secondary"
+        onclick="deleteItem('photos','${photo.id}')">Delete</button>
+    </article>
+  `).join("") || "<p>Your favourite moments will live here. 📷</p>";
+}
+
+function addLetter() {
+  const title = $("letterTitle").value.trim();
+  const to = $("letterTo").value.trim();
+  const body = $("letterBody").value.trim();
+
+  if (!title || !body) {
+    notify("Add a title and write your letter first.");
+    return;
+  }
+
+  data.letters.push({
+    id: crypto.randomUUID(),
+    title, to, body,
+    created: new Date().toLocaleDateString()
+  });
+
+  if (!persist()) {
+    data.letters.pop();
+    return;
+  }
+
+  $("letterTitle").value = "";
+  $("letterTo").value = "";
+  $("letterBody").value = "";
+  renderLetters();
+  notify("Your letter is saved! 💌");
+}
+
+function renderLetters() {
+  $("letterList").innerHTML = data.letters.map(letter => `
+    <article class="card">
+      <h3>💌 ${safeText(letter.title)}</h3>
+      <p>To: ${safeText(letter.to || "My favourite person")}</p>
+      <p class="date">${safeText(letter.created)}</p>
+      <button onclick="openLetter('${letter.id}')">Read Letter</button>
+      <button class="secondary"
+        onclick="deleteItem('letters','${letter.id}')">Delete</button>
+    </article>
+  `).join("") || "<p>No letters yet. Write the first one. 💗</p>";
+}
+
+function openLetter(id) {
+  const letter = data.letters.find(item => item.id === id);
+  if (!letter) return;
+
+  const existing = $("openedLetter");
+  if (existing) existing.remove();
+
+  const box = document.createElement("div");
+  box.id = "openedLetter";
+  box.className = "letter-paper";
+  box.style.marginTop = "15px";
+
+  const title = document.createElement("h3");
+  title.textContent = letter.title;
+
+  const recipient = document.createElement("p");
+  recipient.textContent = "To: " + (letter.to || "My favourite person");
+
+  const body = document.createElement("p");
+  body.textContent = letter.body;
+
+  box.append(title, recipient, body);
+  $("letterList").after(box);
+}
+
+function deleteItem(type, id) {
+  const previous = data[type];
+  data[type] = previous.filter(item => item.id !== id);
+
+  if (!persist()) {
+    data[type] = previous;
+    return;
+  }
+
+  if (type === "events") renderEvents();
+  if (type === "photos") renderPhotos();
+  if (type === "letters") renderLetters();
+
+  notify("Removed successfully.");
+}
+
+const questions = [
+  {
+    q: "What makes a long-distance relationship special?",
+    a: ["Trust and effort", "Never talking", "Keeping secrets"],
+    correct: 0
+  },
+  {
+    q: "What is a lovely way to feel closer?",
+    a: ["A thoughtful message", "Ignoring each other", "Cancelling every call"],
+    correct: 0
+  },
+  {
+    q: "Who makes our story unique?",
+    a: ["Everyone else", "The two of us", "Nobody"],
+    correct: 1
+  },
+  {
+    q: "What's a great future memory to plan?",
+    a: ["Our next meetup", "Another argument", "Nothing together"],
+    correct: 0
+  }
+];
+
+let questionIndex = 0;
+let score = 0;
+let answered = false;
+
+function renderQuestion() {
+  const item = questions[questionIndex];
+  $("question").textContent =
+    `Question ${questionIndex + 1} of ${questions.length}: ${item.q}`;
+
+  $("answers").innerHTML = item.a.map((answer, i) => `
+    <button class="secondary" style="display:block;width:100%;text-align:left"
+      onclick="answerQuestion(${i})">${safeText(answer)}</button>
+  `).join("");
+
+  $("quizFeedback").textContent = "";
+  $("nextBtn").style.display = "none";
+  answered = false;
+}
+
+function answerQuestion(index) {
+  if (answered) return;
+  answered = true;
+
+  const item = questions[questionIndex];
+
+  if (index === item.correct) {
+    score++;
+    $("quizFeedback").textContent = "Correct! You know love well. ❤️";
+  } else {
+    $("quizFeedback").textContent =
+      "Not quite! Every day is a chance to learn about each other. 💗";
+  }
+
+  $("nextBtn").textContent =
+    questionIndex === questions.length - 1
+      ? "See My Score 💖"
+      : "Next Question 💕";
+
+  $("nextBtn").style.display = "inline-block";
+}
+
+function nextQuestion() {
+  if (!answered) return;
+
+  if (questionIndex < questions.length - 1) {
+    questionIndex++;
+    renderQuestion();
+  } else {
+    $("question").textContent = "Our Love Quiz Is Complete! 💞";
+    $("answers").innerHTML = "";
+    $("quizFeedback").textContent =
+      `You scored ${score} out of ${questions.length}. Keep making memories together!`;
+    $("nextBtn").style.display = "none";
+    questionIndex = 0;
+    score = 0;
+    answered = false;
+
+    const restart = document.createElement("button");
+    restart.textContent = "Play Again ❤️";
+    restart.onclick = renderQuestion;
+    $("answers").append(restart);
+  }
+}
+
+function saveSecret() {
+  const word = $("secretWord").value.trim();
+
+  if (!word) {
+    notify("Enter a secret word first.");
+    return;
+  }
+
+  data.secretWord = word;
+  if (!persist()) {
+    data.secretWord = "";
+    return;
+  }
+
+  $("secretWord").value = "";
+  notify("Secret word saved on this browser. 🔐");
+}
+
+function checkSecret() {
+  const guess = $("secretGuess").value.trim();
+
+  if (!data.secretWord) {
+    $("secretResult").textContent =
+      "Set your secret word first on this browser.";
+    return;
+  }
+
+  $("secretResult").textContent =
+    guess.toLowerCase() === data.secretWord.toLowerCase()
+      ? "Unlocked! You found our secret. Sending you a virtual hug! 🤗❤️"
+      : "Not quite! Try again, love. 💕";
+}
+
+renderHome();
+renderEvents();
+renderPhotos();
+renderLetters();
+renderQuestion();
+</script>
+
+</body>
+</html>
